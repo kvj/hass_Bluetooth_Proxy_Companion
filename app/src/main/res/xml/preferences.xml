@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:key="@string/settings_enabled"
+        app:defaultValue="@string/settings_enabled_def"
+        app:title="Scan enabled"/>
+    <SwitchPreferenceCompat
+        app:key="@string/settings_optimize_background"
+        app:defaultValue="@string/settings_optimize_background_def"
+        app:title="Optimized scan in background"/>
+    <EditTextPreference
+        app:useSimpleSummaryProvider="true"
+        app:key="@string/settings_webhook"
+        app:title="Home Assistant webhook"/>
+    <PreferenceCategory app:title="Intervals">
+        <EditTextPreference
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="@string/settings_scan_duration_def"
+            app:key="@string/settings_scan_duration"
+            app:title="Scan duration (seconds)"/>
+        <EditTextPreference
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="@string/settings_scan_interval_def"
+            app:key="@string/settings_scan_interval"
+            app:title="Scan interval (seconds)"/>
+        <EditTextPreference
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="@string/settings_upload_inteval_def"
+            app:key="@string/settings_upload_inteval"
+            app:title="Data upload interval (seconds)"/>
+    </PreferenceCategory>
+</PreferenceScreen>

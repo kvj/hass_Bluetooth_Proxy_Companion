@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HA Bluetooth Proxy</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="settings_enabled">enabled</string>
+    <string name="settings_enabled_def">false</string>
+    <string name="settings_optimize_background">optimize_background</string>
+    <string name="settings_optimize_background_def">false</string>
+    <string name="settings_webhook">webhook</string>
+
+    <string name="settings_scan_duration_def">5</string>
+    <string name="settings_scan_interval_def">300</string>
+    <string name="settings_upload_inteval_def">300</string>
+
+    <string name="settings_scan_duration">scan_duration</string>
+    <string name="settings_scan_interval">scan_interval</string>
+    <string name="settings_upload_inteval">upload_inteval</string>
+
+</resources>
