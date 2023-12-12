@@ -2,7 +2,10 @@ package org.kvj.habtproxy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
@@ -38,8 +41,23 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
+
+        private fun updateProxySection(enabled: Boolean) {
+            findPreference<Preference>(getString(R.string.settings_optimize_background))?.isEnabled = enabled
+            findPreference<Preference>(getString(R.string.settings_webhook))?.isEnabled = enabled
+            findPreference<PreferenceCategory>("cat_intervals")?.isEnabled = enabled
+        }
+
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.preferences, rootKey)
+            findPreference<SwitchPreferenceCompat>(getString(R.string.settings_enabled))?.let {
+                it.setOnPreferenceChangeListener { _, newValue ->
+                    val enabled = newValue as Boolean
+                    updateProxySection(enabled)
+                    true
+                }
+                updateProxySection(it.isChecked)
+            }
         }
     }
 }

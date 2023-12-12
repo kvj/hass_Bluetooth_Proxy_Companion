@@ -15,5 +15,4 @@
     <string name="settings_scan_duration">scan_duration</string>
     <string name="settings_scan_interval">scan_interval</string>
     <string name="settings_upload_inteval">upload_inteval</string>
-
 </resources>
